@@ -1,6 +1,6 @@
 'use strict';
 
-let servicesService = require('../services/services.js');
+let servicesService = require('../services/servicesService.js');
 
 let servicesController = {
     createService: createService,

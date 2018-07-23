@@ -27,12 +27,11 @@ APP_SOURCE=$(pwd)
 echo $APP_SOURCE
 echo "after directory"
 
-winpty docker run -it \
+docker run -it \
     --rm \
     --publish=$DEV_PORT:$DEV_PORT \
     --env=NODE_ENV=local \
     --volume=$APP_SOURCE:/app \
-    --volume=etc/localtime:/etc/localtime:ro \
     --link mongodb:mongodb \
     --name $PROJECT_NAME \
     $PROJECT_NAME \

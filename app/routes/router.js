@@ -2,7 +2,8 @@
 
 let errorMiddleware = require('../middleware/errorMiddleware'),
     express = require('express'),
-    router = express.Router();
+    router = express.Router(),
+    servicesController = require('../controllers/servicesController');
 
 
 /**
@@ -35,6 +36,6 @@ router.route('/api/services/')
 /**
  * Pass any errors to the middleware for consistent logging
  */
-router.use(errorMiddleware);
+router.use(errorMiddleware.handleError);
 
 module.exports = router;
